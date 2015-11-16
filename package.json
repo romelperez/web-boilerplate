@@ -1,13 +1,19 @@
 {
-  "name": "react-example",
+  "name": "frontend-boilerplate",
   "version": "0.1.0",
-  "description": "A react example with batteries included",
+  "description": "A frontend boilerplate with batteries included",
   "keywords": [
     "frontend",
-    "workspace"
+    "boilerplate"
   ],
-  "private": true,
+  "private": false,
   "author": "Romel Pérez (romelperez.com)",
+  "license": "MIT",
+  "homepage": "https://github.com/romelperez/frontend-boilerplate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/romelperez/frontend-boilerplate.git"
+  },
   "dependencies": {
     "express": "^4.13.3"
   },
@@ -28,6 +34,7 @@
     "react-dom": "^0.14.2",
     "underscore": "^1.8.3"
   },
+  "main": "server.js",
   "scripts": {
     "build": "grunt build",
     "test": "node tests"
