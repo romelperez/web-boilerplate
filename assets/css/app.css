@@ -1,0 +1,33 @@
+/* line 5, ../../src/scss/app.scss */
+body {
+  margin: 20px;
+  background-color: #333;
+  color: #EEE;
+  font-size: 1rem;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+/* line 14, ../../src/scss/app.scss */
+p {
+  margin: 0;
+  padding: 0;
+}
+/* line 18, ../../src/scss/app.scss */
+p + p {
+  margin-bottom: 10px;
+}
+
+/* line 23, ../../src/scss/app.scss */
+a,
+strong {
+  color: #0FF;
+}
+
+/* line 28, ../../src/scss/app.scss */
+.box {
+  width: 100px;
+  height: 100px;
+  border: 2px solid gray;
+  background-color: rgba(100, 100, 100, 0.5);
+}

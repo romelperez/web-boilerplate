@@ -1,15 +1,11 @@
 /*!
- * Grunt file.
+ * Tasks.
  */
 
 module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-browserify');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-remove');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-notify');
 
@@ -21,45 +17,25 @@ module.exports = function (grunt) {
   grunt.initConfig({
 
     browserify: {
-      'app-vendor': {
-        src: [
-          './bower_components/jquery/dist/jquery.min.js'
-        ],
-        dest: './build/js/vendor.js'
+      options: {
+        browserifyOptions: {
+          debug: true
+        },
+        transform: [
+          [
+            'babelify',
+            {
+              presets: [
+                'es2015',
+                'react'
+              ]
+            }
+          ]
+        ]
       },
       app: {
-        options: {
-          transform: [
-            [
-              'babelify',
-              {
-                presets: [
-                  'es2015',
-                  'react'
-                ]
-              }
-            ]
-          ]
-        },
-        src: './src/js/main.js',
-        dest: './build/js/main.js'
-      }
-    },
-
-    concat: {
-      app: {
-        src: [
-          './build/js/vendor.js',
-          './build/js/main.js'
-        ],
-        dest: './assets/js/app.js',
-      }
-    },
-
-    uglify: {
-      app: {
-        src: './assets/js/app.js',
-        dest: './assets/js/app.min.js'
+        src: './src/js/app.js',
+        dest: './assets/js/app.js'
       }
     },
 
@@ -69,35 +45,6 @@ module.exports = function (grunt) {
           sassDir: './src/scss',
           cssDir: './assets/css'
         }
-      }
-    },
-
-    cssmin: {
-      app: {
-        files: [{
-          expand: true,
-          cwd: './assets/css',
-          src: [
-            '*.css',
-            '!*.min.css'
-          ],
-          dest: './assets/css',
-          ext: '.min.css'
-        }]
-      }
-    },
-
-    remove: {
-      app: {
-        options: {
-          trace: true
-        },
-        fileList: [
-          // JS
-          './assets/js/app.js',
-          // CSS
-          './assets/css/app.css'
-        ]
       }
     },
 
@@ -125,13 +72,13 @@ module.exports = function (grunt) {
       'js': {
         options: {
           title: 'JavaScript',
-          message: 'JavaScript files have been re-built.'
+          message: 'OK'
         }
       },
       'css': {
         options: {
           title: 'CSS',
-          message: 'CSS files have been re-built.'
+          message: 'OK'
         }
       }
     }
@@ -149,16 +96,11 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build:js', [
     'browserify',
-    'concat',
-    'uglify',
-    'remove',
     'notify:js'
   ]);
 
   grunt.registerTask('build:css', [
     'compass',
-    'cssmin',
-    'remove',
     'notify:css'
   ]);
 
