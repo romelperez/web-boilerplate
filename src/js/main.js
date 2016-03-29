@@ -1,7 +1,3 @@
-var _ = require('underscore');
-var React = require('react');
-var ReactDOM = require('react-dom');
+var something = require('./something');
 
-module.exports = function () {
-  // app - main
-};
+console.log(something('Romel'));

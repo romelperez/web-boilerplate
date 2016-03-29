@@ -29,6 +29,21 @@ module.exports = function (grunt) {
       },
       app: {
         options: {
+          alias: {
+            // name: './path'
+          },
+          plugin: [
+            [
+              'remapify',
+              [
+                {
+                  cwd: './libs/',
+                  src: './**/*.js',
+                  expose: 'libs'
+                }
+              ]
+            ]
+          ],
           transform: [
             [
               'babelify',
@@ -66,8 +81,12 @@ module.exports = function (grunt) {
     compass: {
       app: {
         options: {
+          httpPath: './assets',
           sassDir: './src/scss',
-          cssDir: './assets/css'
+          cssDir: './assets/css',
+          importPath: [
+            'bower_components/foundation/scss'
+          ]
         }
       }
     },
@@ -104,7 +123,10 @@ module.exports = function (grunt) {
     // General watchers.
     watch: {
       'js': {
-        files: ['./src/js/**/*.js'],
+        files: [
+          './src/js/**/*.js',
+          './libs/**/*.js'
+        ],
         tasks: ['build:js'],
         options: {
           spawn: false
