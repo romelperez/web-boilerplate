@@ -1,0 +1,114 @@
+//
+// SMALL
+//
+@keyframes app-small-appear {
+  from {
+    opacity: 0.01;
+    transform: translateY(-1rem);
+  }
+  50% {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes app-small-appear-inverse {
+  from {
+    opacity: 0.01;
+    transform: translateY(1rem);
+  }
+  50% {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes app-small-appear-x {
+  from {
+    opacity: 0.01;
+    transform: translateX(-1rem);
+  }
+  50% {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes app-small-appear-x-inverse {
+  from {
+    opacity: 0.01;
+    transform: translateX(1rem);
+  }
+  50% {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+//
+// MEDIUM
+//
+
+@keyframes app-medium-appear {
+  from {
+    opacity: 0.01;
+    transform: translateY(-3rem);
+  }
+  50% {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes app-medium-appear-inverse {
+  from {
+    opacity: 0.01;
+    transform: translateY(3rem);
+  }
+  50% {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes app-medium-appear-x {
+  from {
+    opacity: 0.01;
+    transform: translateX(-5rem);
+  }
+  50% {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes app-medium-appear-x-inverse {
+  from {
+    opacity: 0.01;
+    transform: translateX(5rem);
+  }
+  50% {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

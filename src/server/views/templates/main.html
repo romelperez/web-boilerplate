@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="{{seo.lang if seo.lang else def.seo.lang}}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>{{seo.title if seo.title else def.seo.title}}</title>
+    <meta name="description"           content="{{seo.description    if seo.description   else def.seo.description}}">
+    <meta name="keywords"              content="{{seo.keywords       if seo.keywords      else def.seo.keywords}}">
+    <meta name="robots"                content="index, follow">
+
+    <meta property="og:title"          content="{{seo.title          if seo.title         else def.seo.title}}">
+    <meta property="og:site_name"      content="{{seo.site_name      if seo.site_name     else def.seo.site_name}}">
+    <meta property="og:description"    content="{{seo.description    if seo.description   else def.seo.description}}">
+    <meta property="og:type"           content="{{seo.type           if seo.type          else def.seo.type}}">
+    <meta property="og:url"            content="{{seo.url            if seo.url           else def.seo.url}}">
+    <meta property="og:image"          content="{{seo.image          if seo.image         else def.seo.image}}">
+
+    <meta name="twitter:card"          content="{{twitter.card       if twitter.card      else def.seo.twitter.card}}">
+    <meta name="twitter:title"         content="{{seo.title          if seo.title         else def.seo.title}}">
+    <meta name="twitter:description"   content="{{seo.description    if seo.description   else def.seo.description}}">
+    <meta name="twitter:image"         content="{{seo.image          if seo.image         else def.seo.image}}">
+    <meta name="twitter:site"          content="{{def.seo.twitter.site}}">
+    <meta name="twitter:creator"       content="{{def.seo.twitter.creator}}">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/core.css">
+
+    {% block headers %}
+    {% endblock %}
+  </head>
+  <body>
+    {% block content %}
+    <div id="app">
+      {{content | safe}}
+    </div>
+    {% endblock %}
+
+    <script src="/js/core.js"></script>
+
+    {% block scripts %}
+    {% endblock %}
+  </body>
+</html>
