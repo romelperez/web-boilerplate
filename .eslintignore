@@ -1,0 +1,10 @@
+node_modules
+bower_components
+static_components
+
+test
+bundle
+tasks
+docs
+public
+setup

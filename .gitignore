@@ -1,0 +1,64 @@
+# gitignore
+
+##
+## BASE
+##
+
+node_modules
+jspm_packages
+bower_components
+logs
+pids
+lib-cov
+coverage
+nbproject
+
+*.log
+*.pid
+*.seed
+
+*~
+*#
+.grunt
+.lock-wscript
+.tmp
+.sass-cache
+.DS_STORE
+.netbeans
+.idea
+.npm
+.node_history
+.node_repl_history
+.vagrant
+.eslintcache
+
+Thumbs.db
+dump.rdb
+npm-debug.log
+
+##
+## PROJECT
+##
+
+### LOCAL
+src/server/settings/local.js
+src/client/settings/local.js
+tasks/local.js
+
+### BUNDLE
+bundle/*
+!bundle/.gitkeep
+
+### PUBLIC
+public/css/*
+!public/css/.gitkeep
+public/js/*
+!public/js/.gitkeep
+
+### DOCS
+docs/styleguide/*
+!docs/styleguide/template.html
+docs/api/*
+!docs/api/.gitkeep
+docs/js/*
+!docs/js/.gitkeep
