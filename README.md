@@ -1,8 +1,8 @@
 # React boilerplate
 
-> Currently working on it.
+> Work in Progress.
 
-[![prhone](https://img.shields.io/badge/prhone-project-00bbbb.svg)](http://romelperez.com)
-[![license](https://img.shields.io/github/license/vulcan-estudios/vulcanval.svg?maxAge=2592000)](./LICENSE)
+[![prhone](https://img.shields.io/badge/prhone-project-1b38a9.svg)](http://romelperez.com)
+[![license](https://img.shields.io/github/license/romelperez/react-boilerplate.svg?maxAge=2592000)](./LICENSE)
 
 A frontend React boilerplate.
