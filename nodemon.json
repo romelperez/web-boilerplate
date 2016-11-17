@@ -1,0 +1,17 @@
+{
+  "verbose": false,
+  "watch": [
+    "bundle/*"
+  ],
+  "ignore": [
+    "node_modules/*",
+    "bower_components/*",
+    "static_components/*",
+    "public/*",
+    "src/*",
+    "test/*",
+    "tasks/*",
+    "docs/*",
+    "setup/*"
+  ]
+}
