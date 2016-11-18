@@ -29,14 +29,14 @@ export default {
     'url': null,
     'server': '127.0.0.1',
     'port': 27017,
-    'db': 'carseller',
-    'user': 'carseller-user',
+    'db': 'reactb',
+    'user': 'reactb-programmer',
     'pwd': '12345678',
   },
 
   // Express session.
   'session': {
-    'name': 'app',
+    'name': 'appsession',
     'pass': '23456789',
   },
 

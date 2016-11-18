@@ -24,12 +24,13 @@ export default {
         exec().
         then(function (user) {
           if (user) {
+            res.status(400);
             throw new Error('The email is already taken.');
           }
         }).
         then(function () {
           return new Promise(function (resolve) {
-            bcrypt.hash(map.pwd, function (err, hash) {
+            bcrypt.hash(map.pwd, 10, function (err, hash) {
               if (err) throw err;
               resolve(hash);
             });
@@ -44,7 +45,10 @@ export default {
           res.json({ msg: true });
         }).
         catch(function (err) {
-          res.status(500).json({ msg: String(err) });
+          if (res.statusCode === 200) {
+            res.status(500);
+          }
+          res.json({ msg: String(err) });
         });
     }
   },

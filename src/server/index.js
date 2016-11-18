@@ -1,5 +1,6 @@
 import express      from 'express';
 import mongoose     from 'mongoose';
+import bluebird     from 'bluebird';
 import ngrok        from 'ngrok';
 import chalk        from 'chalk';
 import settings     from 'server/settings';
@@ -19,6 +20,8 @@ const server = express();
 server.locals = {
   def: settings
 };
+
+mongoose.Promise = bluebird;
 
 middlewares(server);
 router(server);

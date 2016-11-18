@@ -19,4 +19,28 @@ export default {
         });
     },
   },
+
+  '/users/:id': {
+    get (req, res) {
+
+      const { id } = req.params;
+      const query = { _id: id };
+      const projection = { hash: false };
+
+      User.
+        findOne(query, projection).
+        exec().
+        then(function (user) {
+          if (!user) {
+            res.status(400).json({ msg: 'Not found.' });
+          }
+          else {
+            res.json(user);
+          }
+        }).
+        catch(function (err) {
+          res.status(500).json({ msg: String(err) });
+        });
+    },
+  },
 };
