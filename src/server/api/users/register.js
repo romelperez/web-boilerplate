@@ -1,5 +1,6 @@
 import bcrypt       from 'bcrypt';
 import vulcanval    from 'vulcanval';
+import settings     from 'server/settings';
 import User         from 'server/models/User';
 import validators   from 'shared/tools/validators';
 
@@ -30,7 +31,7 @@ export default {
         }).
         then(function () {
           return new Promise(function (resolve) {
-            bcrypt.hash(map.pwd, 10, function (err, hash) {
+            bcrypt.hash(map.pwd, settings.security.saltRounds, function (err, hash) {
               if (err) throw err;
               resolve(hash);
             });

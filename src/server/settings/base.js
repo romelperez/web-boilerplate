@@ -40,6 +40,13 @@ export default {
     'pass': '23456789',
   },
 
+  // Security.
+  'security': {
+
+    // bcrypt salt rounds.
+    'saltRounds': 10
+  },
+
   // Express endpoints.
   'api': {
     'viewsPath': process.cwd() + '/src/server/views',
