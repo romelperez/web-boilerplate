@@ -1,5 +1,5 @@
 #!/bin/bash
 
-mongo < mongodb/admin.js
-mongo < mongodb/base.js
-mongo < mongodb/users.js
+mongo < ./setup/mongodb/admin.js
+mongo < ./setup/mongodb/base.js
+mongo < ./setup/mongodb/users.js
