@@ -1,8 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Row, Column } from 'vulcangrid';
-
-console.log('Home Script File.');
+import { render } from 'react-dom';
+import { Row, Column } from 'react-foundation';
 
 const root = document.querySelector('#app');
 
@@ -10,12 +8,15 @@ function App () {
   return (
     <main className='home'>
       <Row>
-        <Column sm={12}>
+        <Column small={12}>
           <h1>Home</h1>
+        </Column>
+        <Column small={12}>
+          <p>Home Application Site.</p>
         </Column>
       </Row>
     </main>
   );
 }
 
-ReactDOM.render(<App />, root);
+render(<App />, root);
