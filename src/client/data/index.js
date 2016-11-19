@@ -1,14 +1,14 @@
 import axios    from 'axios';
 import settings from 'client/settings';
 
-const resource1 = function (data) {
+const login = function (data) {
   return axios({
-    method: 'get',
-    url: `${settings.api}/api/resource1`,
+    method: 'post',
+    url: `${settings.api}/api/users/login`,
     data
   });
 };
 
 export default {
-  resource1,
+  login,
 };
