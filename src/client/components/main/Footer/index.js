@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import { Row } from 'react-foundation';
 import mergeClasses from 'client/tools/mergeClasses';
 
 /**
@@ -6,17 +7,15 @@ import mergeClasses from 'client/tools/mergeClasses';
  */
 const Footer = function (props) {
 
-  const { className, ...other } = props;
+  const { className, ...rest } = props;
   const cls = mergeClasses('main-footer', className);
   const text = 'Footer';
 
   return (
-    <footer {...other} className={cls}>
-      <div className='row'>
-        <div className='column small-12'>
-          {text}
-        </div>
-      </div>
+    <footer {...rest} className={cls}>
+      <Row isColumn>
+        {text}
+      </Row>
     </footer>
   );
 };

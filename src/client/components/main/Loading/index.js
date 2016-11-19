@@ -1,24 +1,19 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import { Row } from 'react-foundation';
 import mergeClasses from 'client/tools/mergeClasses';
 
 const Loading = function (props) {
 
-  const { className, children, ...other } = props;
+  const { className, children, ...rest } = props;
   const cls = mergeClasses('main-loading', className);
 
   return (
-    <div {...other} className={cls}>
-      <div className='row align-center'>
-        <div className='column small-12'>
-          <div className='main-loading__circle'></div>
-        </div>
-      </div>
+    <div {...rest} className={cls}>
+      <Row isColumn className='align-center'>
+        <div className='main-loading__circle'></div>
+      </Row>
     </div>
   );
 };
-
-Loading.propTypes = {};
-
-Loading.defaultProps = {};
 
 export default Loading;

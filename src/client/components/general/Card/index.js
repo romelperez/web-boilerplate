@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import { Row } from 'react-foundation';
 import mergeClasses from 'client/tools/mergeClasses';
 
 /**
@@ -6,16 +7,14 @@ import mergeClasses from 'client/tools/mergeClasses';
  */
 const Card = function (props) {
 
-  const { className, children, ...other } = props;
+  const { className, children, ...rest } = props;
   const cls = mergeClasses('general-card', className);
 
   return (
-    <section {...other} className={cls}>
-      <div className='row'>
-        <div className='column small-12'>
-          {children}
-        </div>
-      </div>
+    <section {...rest} className={cls}>
+      <Row isColumn>
+        {children}
+      </Row>
     </section>
   );
 };

@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import mergeClasses from 'client/tools/mergeClasses';
 
 /**
@@ -6,11 +6,11 @@ import mergeClasses from 'client/tools/mergeClasses';
  */
 const Content = function (props) {
 
-  const { className, children, other } = props;
+  const { className, children, ...rest } = props;
   const cls = mergeClasses('main-content', className);
 
   return (
-    <section {...other} className={cls}>
+    <section {...rest} className={cls}>
       {children}
     </section>
   );

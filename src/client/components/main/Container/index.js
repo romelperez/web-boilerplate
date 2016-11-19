@@ -6,11 +6,11 @@ import mergeClasses from 'client/tools/mergeClasses';
  */
 const Container = function (props) {
 
-  const { className, children, ...other } = props;
+  const { className, children, ...rest } = props;
   const cls = mergeClasses('main-container', className);
 
   return (
-    <main {...other} className={cls}>
+    <main {...rest} className={cls}>
       {children}
     </main>
   );

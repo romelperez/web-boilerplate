@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Row } from 'react-foundation';
 import mergeClasses from 'client/tools/mergeClasses';
 
 /**
@@ -6,20 +7,18 @@ import mergeClasses from 'client/tools/mergeClasses';
  */
 const Header = function (props) {
 
-  const { className, children, ...other } = props;
+  const { className, children, ...rest } = props;
   const cls = mergeClasses('main-header', className);
 
   return (
-    <header {...other} className={cls}>
-      <div className='row'>
-        <div className='column small-12'>
-          <h1>
-            <a href='/' className='main-header__title'>
-              {children}
-            </a>
-          </h1>
-        </div>
-      </div>
+    <header {...rest} className={cls}>
+      <Row isColumn>
+        <h1>
+          <a href='/' className='main-header__title'>
+            {children}
+          </a>
+        </h1>
+      </Row>
     </header>
   );
 };

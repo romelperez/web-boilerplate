@@ -17,7 +17,24 @@ const register = function (data) {
   });
 };
 
+const getAllUsers = function () {
+  return axios({
+    method: 'get',
+    url: `${settings.api}/api/users`
+  });
+};
+
+const getUser = function (id, data) {
+  return axios({
+    method: 'get',
+    url: `${settings.api}/api/users/${id}`,
+    data
+  });
+};
+
 export default {
   login,
-  register
+  register,
+  getAllUsers,
+  getUser
 };

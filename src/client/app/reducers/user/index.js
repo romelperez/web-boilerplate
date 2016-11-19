@@ -1,6 +1,9 @@
 const getInitialState = function () {
   return {
-    name: ''
+    _id: null,
+    name: '',
+    email: '',
+    img: ''
   };
 };
 
