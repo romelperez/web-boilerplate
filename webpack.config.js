@@ -23,7 +23,10 @@ if (!dev) {
 
 module.exports = Object.assign({}, webpackBase, {
   entry: {
-    'core':     './src/client/core/index.js',
+    'core': [
+      './src/client/core/index.js',
+      './node_modules/foundation-sites/dist/foundation.min.js'
+    ],
     'home':     './src/client/home/index.js',
     'app':      './src/client/app/index.js',
     'login':    './src/client/login/index.js',
