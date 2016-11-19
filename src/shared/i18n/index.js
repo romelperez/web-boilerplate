@@ -1,5 +1,5 @@
 import i18next from 'i18next';
-import en from './resources/en';
+import en from './en';
 
 /**
  * @module {Object} i18n
