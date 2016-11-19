@@ -22,12 +22,12 @@ const App = React.createClass({
   },
 
   componentDidMount () {
-    $(this.form).vulcanval(validators.login);
+    $(this.form).vulcanval(validators.register);
   },
 
   render () {
 
-    const title = i18n.t('login.title');
+    const title = i18n.t('register.title');
 
     const error = this.state.error;
     let errorEl;
@@ -38,40 +38,60 @@ const App = React.createClass({
     }
 
     return (
-      <Container className='login'>
+      <Container className='register'>
         <Header>
           {title}
         </Header>
         <Content>
-          <Row className='login-content' isColumn={true}>
+          <Row className='register-content' isColumn={true}>
             <Card>
               {errorEl}
               <form ref={r => (this.form = r)} onSubmit={this.onSubmit}>
                 <Row isColumn={true}>
-                  <label htmlFor='login-email'>Email</label>
+                  <label htmlFor='register-name'>Name</label>
                   <input
-                    id='login-email'
+                    id='register-name'
+                    name='name'
+                    type='text'
+                    data-vv-display='#register-name-msg'
+                  />
+                  <div id='register-name-msg'></div>
+                </Row>
+                <Row isColumn={true}>
+                  <label htmlFor='register-email'>Email</label>
+                  <input
+                    id='register-email'
                     name='email'
                     type='email'
-                    data-vv-display='#login-email-msg'
+                    data-vv-display='#register-email-msg'
                   />
-                  <div id='login-email-msg'></div>
+                  <div id='register-email-msg'></div>
                 </Row>
                 <Row isColumn={true}>
-                  <label htmlFor='login-pwd'>Password</label>
+                  <label htmlFor='register-pwd'>Password</label>
                   <input
-                    id='login-pwd'
+                    id='register-pwd'
                     name='pwd'
                     type='password'
-                    data-vv-display='#login-pwd-msg'
+                    data-vv-display='#register-pwd-msg'
                   />
-                  <div id='login-pwd-msg'></div>
+                  <div id='register-pwd-msg'></div>
                 </Row>
                 <Row isColumn={true}>
-                  <input className='button' type='submit' value='Enter' />
+                  <label htmlFor='register-repwd'>Re-Password</label>
+                  <input
+                    id='register-repwd'
+                    name='repwd'
+                    type='password'
+                    data-vv-display='#register-repwd-msg'
+                  />
+                  <div id='register-repwd-msg'></div>
                 </Row>
                 <Row isColumn={true}>
-                  <p>No account? <a href='/register'>Register</a>.</p>
+                  <input className='button' type='submit' value='Register' />
+                </Row>
+                <Row isColumn={true}>
+                  <p>Have an account? <a href='/login'>Login</a>.</p>
                 </Row>
               </form>
             </Card>
@@ -98,10 +118,10 @@ const App = React.createClass({
     const map = $(this.form).vulcanval('getMap');
 
     data.
-      login(map).
+      register(map).
       then(() => {
         this.setState({ error: false });
-        window.location.href = '/app';
+        window.location.href = '/login';
       }).
       catch(({ response }) => {
         const msg = response.data && response.data.msg ?

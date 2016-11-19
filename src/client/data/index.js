@@ -9,6 +9,15 @@ const login = function (data) {
   });
 };
 
+const register = function (data) {
+  return axios({
+    method: 'post',
+    url: `${settings.api}/api/users/register`,
+    data
+  });
+};
+
 export default {
   login,
+  register
 };
