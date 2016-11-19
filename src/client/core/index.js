@@ -10,4 +10,5 @@ import loader from './loader';
 $(document).ready(function () {
   loader();
   analytics();
+  $(document).foundation();
 });
