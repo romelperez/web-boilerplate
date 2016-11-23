@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import mergeClasses from 'client/tools/mergeClasses';
 
 /**
@@ -14,6 +14,14 @@ const Content = function (props) {
       {children}
     </section>
   );
+};
+
+Content.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.string
+  ]),
+  className: PropTypes.string
 };
 
 export default Content;

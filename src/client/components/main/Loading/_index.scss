@@ -2,8 +2,9 @@
 
 .main-loading {
   position: relative;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   animation: app-small-appear 250ms ease-out;
 
   .main-loading__circle {
@@ -21,8 +22,8 @@
   }
 
   @include breakpoint(medium) {
-    margin-top: 10rem;
-    margin-bottom: 10rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
   }
 }
 

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Row } from 'react-foundation';
 import mergeClasses from 'client/tools/mergeClasses';
 
 /**
- * A normal container card.
+ * A normal container card. It creates an application separation.
  */
 const Card = function (props) {
 
@@ -17,6 +17,14 @@ const Card = function (props) {
       </Row>
     </section>
   );
+};
+
+Card.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.string
+  ]),
+  className: PropTypes.string
 };
 
 export default Card;

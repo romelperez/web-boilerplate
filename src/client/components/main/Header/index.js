@@ -24,14 +24,11 @@ const Header = function (props) {
 };
 
 Header.propTypes = {
-
-  /**
-   * Header can optionally have an element content.
-   */
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.string
-  ])
+  ]),
+  className: PropTypes.string
 };
 
 export default Header;

@@ -2,6 +2,9 @@ import React, { PropTypes } from 'react';
 import { Row, Column } from 'react-foundation';
 import mergeClasses from 'client/tools/mergeClasses';
 
+/**
+ * User information element.
+ */
 const User = function (props) {
 
   const { _id, name, email, img, className, children, ...rest } = props;
@@ -23,9 +26,25 @@ const User = function (props) {
 };
 
 User.propTypes = {
+
+  /**
+   * Unique identifier.
+   */
   _id: PropTypes.string,
+
+  /**
+   * Full name.
+   */
   name: PropTypes.string.isRequired,
+
+  /**
+   * Email.
+   */
   email: PropTypes.string,
+
+  /**
+   * Profile picture absolute URL.
+   */
   img: PropTypes.string,
 };
 

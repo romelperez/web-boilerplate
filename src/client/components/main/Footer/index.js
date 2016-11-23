@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Row } from 'react-foundation';
 import mergeClasses from 'client/tools/mergeClasses';
 
@@ -18,6 +18,10 @@ const Footer = function (props) {
       </Row>
     </footer>
   );
+};
+
+Footer.propTypes = {
+  className: PropTypes.string
 };
 
 export default Footer;
