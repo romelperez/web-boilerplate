@@ -1,4 +1,4 @@
-import enzyme, { shallow, mount, render } from 'enzyme';
+import { shallow } from 'enzyme';
 import React from 'react';
 import Container from './index';
 
@@ -8,8 +8,7 @@ describe('Component', function () {
 
       it('Has proper class name', function () {
         const actual = shallow(<Container />).hasClass('main-container');
-        const expected = true;
-        expect(actual).to.equal(expected);
+        expect(actual).to.be.true;
       });
     });
   });

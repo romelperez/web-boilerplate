@@ -1,6 +1,5 @@
-import enzyme, { shallow, mount, render } from 'enzyme';
-import React, { PropTypes } from 'react';
-import i18n from 'shared/i18n';
+import { shallow } from 'enzyme';
+import React from 'react';
 import Footer from './index';
 
 describe('Component', function () {
@@ -9,8 +8,7 @@ describe('Component', function () {
 
       it('Has proper class name', function () {
         const actual = shallow(<Footer />).hasClass('main-footer');
-        const expected = true;
-        expect(actual).to.equal(expected);
+        expect(actual).to.be.true;
       });
 
     });

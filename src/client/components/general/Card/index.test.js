@@ -1,4 +1,4 @@
-import enzyme, { shallow, mount, render } from 'enzyme';
+import { shallow } from 'enzyme';
 import React from 'react';
 import Card from './index';
 
@@ -8,8 +8,7 @@ describe('Component', function () {
 
       it('Has proper class name', function () {
         const actual = shallow(<Card />).hasClass('general-card');
-        const expected = true;
-        expect(actual).to.equal(expected);
+        expect(actual).to.be.true;
       });
     });
   });

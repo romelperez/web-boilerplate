@@ -1,5 +1,5 @@
-import enzyme, { shallow, mount, render } from 'enzyme';
-import React, { PropTypes } from 'react';
+import { shallow } from 'enzyme';
+import React from 'react';
 import Content from './index';
 
 describe('Component', function () {
@@ -8,8 +8,7 @@ describe('Component', function () {
 
       it('Has proper class name', function () {
         const actual = shallow(<Content />).hasClass('main-content');
-        const expected = true;
-        expect(actual).to.equal(expected);
+        expect(actual).to.be.true;
       });
     });
   });
