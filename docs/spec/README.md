@@ -1,3 +1,0 @@
-# Specification
-
-Project specification.
