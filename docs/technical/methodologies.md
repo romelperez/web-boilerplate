@@ -20,7 +20,7 @@ _Some methodologies apply in certain cases or partly._
 
 - Codification UTF-8
 - 2 space indentation
-- File names, lowercase, words split by dashes
+- Kebab Case for file names
 - Testing files names should end with `.test` before extensions
 - The main file in a component/module should be called `index`
 - No more than 80 characters per line of code
@@ -29,7 +29,7 @@ _Some methodologies apply in certain cases or partly._
 - Modules exports should be defined at the end (when eligible)
 - CSS animations/transitions over JS animations
 - Font icons over CSS image sprites
-- JavaScript variables and function names, camel case, avoid single letters
+- camelCase for JavaScript, avoid single letters
 - React components folders are capitalized and the `index.js` file is the exported
 - Classes folders are capitalized and `index.js` file is the exported
 
