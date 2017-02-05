@@ -20,6 +20,7 @@ const server = express();
 server.locals = {
   def: settings
 };
+server.set('x-powered-by', false);
 
 mongoose.Promise = bluebird;
 

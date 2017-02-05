@@ -1,5 +1,5 @@
-import render from './render.js';
-import store from './store.js';
+import render from './render';
+import store from './store';
 
 store.subscribe(render);
 
