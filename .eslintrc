@@ -17,7 +17,9 @@
   "globals": {
     "chai": true,
     "assert": true,
-    "expect": true
+    "expect": true,
+    "sinon": true,
+    "Materialize": true
   },
 
   "plugins": [
@@ -55,13 +57,13 @@
     "react/jsx-uses-vars": 2,
     "react/react-in-jsx-scope": 2,
     "block-scoped-var": [0],
-    "brace-style": [2, "stroustrup", {"allowSingleLine": true}],
+    "brace-style": [0],
     "camelcase": [0],
     "comma-dangle": [0],
     "comma-spacing": [2],
     "comma-style": [2, "last"],
     "complexity": [0, 11],
-    "consistent-return": [2],
+    "consistent-return": [0],
     "consistent-this": [0, "that"],
     "curly": [2, "multi-line"],
     "default-case": [2],
@@ -108,7 +110,7 @@
     "no-ex-assign": [2],
     "no-extend-native": [1],
     "no-extra-bind": [2],
-    "no-extra-boolean-cast": [2],
+    "no-extra-boolean-cast": [0],
     "no-extra-semi": [1],
     "no-fallthrough": [2],
     "no-floating-decimal": [2],
@@ -161,7 +163,7 @@
     "no-sync": [0],
     "no-ternary": [0],
     "no-throw-literal": [2],
-    "no-trailing-spaces": [2],
+    "no-trailing-spaces": [0],
     "no-undef": [2],
     "no-undef-init": [2],
     "no-undefined": [0],
@@ -176,7 +178,7 @@
     "no-extra-parens": [0],
     "one-var": [0],
     "operator-assignment": [0, "always"],
-    "operator-linebreak": [2, "before"],
+    "operator-linebreak": [0],
     "padded-blocks": [0],
     "quote-props": [0],
     "radix": [0],
