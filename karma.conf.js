@@ -1,10 +1,7 @@
 // Karma configuration
 const webpackBase = require('./webpack.base.js');
-const log = require(process.cwd() + '/src/server/log');
 
-log.app.env();
-
-const isCI = process.env.NODE_CI || process.env.TRAVIS;
+const isCI = !!process.env.TRAVIS;
 const webpackConf = Object.assign({}, webpackBase, {
   devtool: 'inline-source-map',
   externals: {
@@ -13,12 +10,6 @@ const webpackConf = Object.assign({}, webpackBase, {
     'react/lib/ExecutionEnvironment': true,
     'react/lib/ReactContext': true,
   }
-});
-
-// Delete `include` property in loaders because karma is already in charge of
-// that task.
-webpackConf.module.loaders.forEach(loader => {
-  delete loader.include;
 });
 
 module.exports = function (config) {
@@ -35,21 +26,24 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'public/js/core.js',
-      'src/client/**/*.test.js'
+      'node_modules/babel-polyfill/dist/polyfill.js',
+      'client/**/*.test.js',
+      'shared/**/*.test.js'
     ],
 
 
     // list of files to exclude
     exclude: [
-      'src/server'
+      'public',
+      'server'
     ],
 
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.js': ['webpack', 'sourcemap']
+      'client/**/*.js': ['webpack', 'sourcemap'],
+      'shared/**/*.js': ['webpack', 'sourcemap']
     },
 
 

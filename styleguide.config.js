@@ -10,18 +10,17 @@ module.exports = {
   template: './docs/styleguide/template.html',
 
   // All JS files inside `src/components`.
-  components: './src/client/components/**/index.js',
+  components: './client/components/**/index.js',
 
   // Folder to publish the docs.
-  styleguideDir: './docs/styleguide',
+  styleguideDir: './docs/styleguide/',
 
   // Show the code snippets by default.
-  showCode: true,
+  showCode: false,
+
+  // code editor theme
+  highlightTheme: 'night',
 
   // Webpack configuration, which extends the library's with our own.
-  updateWebpackConfig (conf, env) {
-    conf.resolve.fallback = webpackBase.resolve.fallback;
-    conf.module.loaders = conf.module.loaders.concat(webpackBase.module.loaders);
-    return conf;
-  }
+  webpackConfig: webpackBase,
 };

@@ -19,7 +19,8 @@
     "assert": true,
     "expect": true,
     "sinon": true,
-    "Materialize": true
+    "Materialize": true,
+    "io": true
   },
 
   "plugins": [

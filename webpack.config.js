@@ -1,19 +1,17 @@
+const path = require('path');
 const webpack = require('webpack');
-const webpackBase = require('./webpack.base.js');
-const log = require(process.cwd() + '/src/server/log');
+const baseSettings = require('./webpack.base.js');
 
-log.app.env();
-
-const dev = process.env.NODE_ENV !== 'production';
+const production = process.env.NODE_ENV === 'production';
 const plugins = [
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify(
-      dev ? 'development' : 'production'
+      production ? 'production' : 'development'
     )
   })
 ];
 
-if (!dev) {
+if (production) {
   plugins.push(
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false }
@@ -21,21 +19,12 @@ if (!dev) {
   );
 }
 
-module.exports = Object.assign({}, webpackBase, {
+module.exports = Object.assign(baseSettings, {
   entry: {
-    'core': [
-      './src/client/core/index.js',
-      './node_modules/foundation-sites/dist/foundation.min.js'
-    ],
-    'home':     './src/client/home/index.js',
-    'app':      './src/client/app/index.js',
-    'login':    './src/client/login/index.js',
-    'register': './src/client/register/index.js',
+    'app': './client/index.js'
   },
   output: {
-    path: './public/js/',
+    path: path.resolve(__dirname, './public/js/'),
     filename: '[name].js'
   },
-  devtool: dev ? 'inline-source-map' : undefined,
-  plugins
 });

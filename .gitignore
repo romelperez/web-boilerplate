@@ -35,30 +35,28 @@ nbproject
 Thumbs.db
 dump.rdb
 npm-debug.log
+package-lock.json
 
 ##
 ## PROJECT
 ##
 
 ### LOCAL
-src/server/settings/local.js
-src/client/settings/local.js
-tasks/local.js
 
-### BUNDLE
-bundle/*
-!bundle/.gitkeep
+settings-local.js
+gulpfile.local.js
 
 ### PUBLIC
+
 public/css/*
 !public/css/.gitkeep
+
 public/js/*
 !public/js/.gitkeep
+!public/js/jquery.min.js
+!public/js/materialize.min.js
 
 ### DOCS
+
 docs/styleguide/*
 !docs/styleguide/template.html
-docs/api/*
-!docs/api/.gitkeep
-docs/js/*
-!docs/js/.gitkeep

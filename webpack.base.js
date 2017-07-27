@@ -1,24 +1,25 @@
-const path = require('path');
-
-const srcPath = path.join(process.cwd(), '/src');
-
 module.exports = {
   resolve: {
-    fallback: srcPath
+    modules: [
+      './',
+      'node_modules'
+    ],
   },
+  devtool: 'inline-source-map',
   module: {
-    loaders: [{
-      loader: 'babel',
-      test: /\.js$/,
-      include: srcPath,
-      exclude: /(node_modules|bower_components|static_components)/,
-      query: {
-        presets: [
-          'react',
-          'es2015',
-          'stage-1'
-        ]
-      }
+    rules: [{
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            'react',
+            'es2015',
+            'stage-1'
+          ]
+        }
+      },
+      test: /.js$/,
+      exclude: /(node_modules)/,
     }]
   }
 };
