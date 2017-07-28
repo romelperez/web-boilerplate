@@ -53,8 +53,6 @@ public/css/*
 
 public/js/*
 !public/js/.gitkeep
-!public/js/jquery.min.js
-!public/js/materialize.min.js
 
 ### DOCS
 

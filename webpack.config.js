@@ -21,7 +21,11 @@ if (production) {
 
 module.exports = Object.assign(baseSettings, {
   entry: {
-    'app': './client/index.js'
+    'core': [
+      './client/core/index.js',
+      './node_modules/materialize-css/dist/js/materialize.min.js'
+    ],
+    'app': './client/app/index.js'
   },
   output: {
     path: path.resolve(__dirname, './public/js/'),

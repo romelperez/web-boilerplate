@@ -24,7 +24,8 @@ const settings = {
     ],
     includePaths: [
       './',
-      './node_modules/materialize-css/sass'
+      './node_modules/materialize-css/sass',
+      './node_modules/vulcanval/src/scss'
     ],
     output: './public/css',
   }

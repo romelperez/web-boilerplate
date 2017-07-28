@@ -1,0 +1,12 @@
+/**
+ * VulcanVal jQuery Plugin v3.x
+ */
+
+@import 'client/settings';
+
+$vv-label-error-color: $error-color;
+$vv-field-error-border-color: $error-color;
+$vv-field-error-focus-border-color: $error-color;
+$vv-display-error-color: $error-color;
+
+@import 'jquery/vulcanval-jquery';
